@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import { type Locale } from "@/utils/i18n";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -15,17 +16,19 @@ const notoSerifJP = Noto_Serif_JP({
 });
 
 export const metadata: Metadata = {
-  title: "ふたりごはん",
+  title: "しずごはん",
   description: "夫婦で一緒につくる「季節の手仕事、季節料理」のレシピサイト",
 };
 
-export default function RootLayout({
+export default function LangLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: { lang: Locale };
 }>) {
   return (
-    <html lang="ja">
+    <html lang={params.lang}>
       <body
         className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}
       >

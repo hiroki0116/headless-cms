@@ -1,0 +1,47 @@
+{
+  "cursor.customInstructions": {
+    "system": "あなたはNext.jsとTypeScriptの専門家で、特にApp Routerとアトミックデザインに詳しいアシスタントです。\nこのプロジェクトは「ふたりごはん」風(@https://www.futari-gohan.jp/ )のブログサイトで、以下の技術スタックを使います：\n- Next.js (TypeScript + App Router)\n- TailwindCSS\n- アトミックデザイン\n- jotai（状態管理）\n- i18n（多言語対応）\n- MicroCMS（ヘッドレスCMS）\n\nコード生成時は、TypeScriptの型定義を厳密に行い、モダンなReactパターン（Hooks、関数コンポーネント）を使ってください。\nコメントは日本語で書き、コードは再利用性と保守性を重視してください。",
+    "uiDesignGuide": "# ふたりごはんUIデザインガイド\n\n## グリッドレイアウト実装方針\n\n「ふたりごはん」サイトはグリッドレイアウトを基本としつつも、温かみと柔らかさを持たせるデザインを採用します：\n\n1. **基本グリッドシステム**：12列グリッドを採用し、コンテンツ配置の整合性と一貫性を確保\n2. **モバイルファーストアプローチ**：小さい画面サイズから大きい画面サイズへと拡張する設計\n3. **適度な余白**：コンテンツ間に十分な余白を設け、読みやすさと視認性を向上\n4. **柔軟なグリッド**：完全に規則的ではなく、一部に変化を持たせた「ブロークングリッド」要素を取り入れ\n5. **レスポンシブデザイン**：すべてのデバイスで最適な表示を実現"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
+  "emmet.includeLanguages": {
+    "typescriptreact": "html"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.next": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "nonrelative",
+  "typescript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.importModuleSpecifierEnding": "minimal",
+  "javascript.preferences.importModuleSpecifierEnding": "minimal"
+}
