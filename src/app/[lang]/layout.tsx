@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
-import { type Locale } from "@/utils/i18n";
-import "./globals.css";
+import "../globals.css";
+
+type Locale = "ja" | "en";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -22,18 +23,15 @@ export const metadata: Metadata = {
 
 export default function LangLayout({
   children,
-  params,
 }: Readonly<{
   children: React.ReactNode;
   params: { lang: Locale };
 }>) {
   return (
-    <html lang={params.lang}>
-      <body
-        className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+    <div
+      className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}
+    >
+      {children}
+    </div>
   );
 }

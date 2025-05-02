@@ -1,5 +1,5 @@
-import { Locale } from "@/i18n/config";
 import Link from "next/link";
+import { Locale } from "./i18n/settings";
 
 const languages: { code: Locale; name: string }[] = [
   { code: "ja", name: "日本語" },

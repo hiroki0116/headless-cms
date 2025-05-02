@@ -1,36 +1,30 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { dir } from "i18next";
+import { languages } from "./i18n/settings";
 
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  variable: "--font-noto-sans-jp",
-  weight: ["400", "500", "700"],
-});
-
-const notoSerifJP = Noto_Serif_JP({
-  subsets: ["latin"],
-  variable: "--font-noto-serif-jp",
-  weight: ["400", "500", "700"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ふたりごはん",
-  description: "夫婦で一緒につくる「季節の手仕事、季節料理」のレシピサイト",
+  title: "Headless CMS",
+  description: "A sample headless CMS using Next.js and MicroCMS",
 };
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
+  params: { lng },
+}: {
   children: React.ReactNode;
-}>) {
+  params: { lng: string };
+}) {
   return (
-    <html lang="ja">
-      <body
-        className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}
-      >
-        {children}
-      </body>
+    <html lang={lng} dir={dir(lng)}>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
