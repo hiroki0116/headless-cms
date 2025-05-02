@@ -1,0 +1,7 @@
+{
+  "welcome": "ようこそ",
+  "home": {
+    "title": "ホームページ",
+    "description": "Next.jsとMicroCMSを使用したヘッドレスCMSのサンプルです"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "welcome": "Welcome",
+  "home": {
+    "title": "Home Page",
+    "description": "A sample headless CMS using Next.js and MicroCMS"
+  }
+}
