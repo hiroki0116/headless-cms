@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
+import { getTranslation } from "../i18n/server";
 import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import DefaultLayout from "@/app/components/templates/DefaultLayout";
 import "../globals.css";
-
-type Locale = "ja" | "en";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
@@ -16,22 +15,22 @@ const notoSerifJP = Noto_Serif_JP({
   weight: ["400", "500", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "しずごはん",
-  description: "夫婦で一緒につくる「季節の手仕事、季節料理」のレシピサイト",
-};
-
-export default function LangLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+  params: { lang },
+}: {
   children: React.ReactNode;
-  params: { lang: Locale };
-}>) {
+  params: { lang: string };
+}) {
+  await getTranslation(lang);
+
   return (
-    <div
-      className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}
-    >
-      {children}
-    </div>
+    <html lang={lang}>
+      <body
+        className={`${notoSansJP.variable} ${notoSerifJP.variable} font-sans antialiased`}
+      >
+        <DefaultLayout>{children}</DefaultLayout>
+      </body>
+    </html>
   );
 }
